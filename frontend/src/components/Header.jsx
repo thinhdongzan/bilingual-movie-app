@@ -1,15 +1,30 @@
 import { Search, Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.scrollY;
+            setIsScrolled(scrollTop > 100);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
     return (
-        <header className="flex flex-row items-center justify-between bg-black px-4 md:px-10 py-5 shadow-md relative">
+        <header className={`fixed top-0 left-0 right-0 flex flex-row items-center justify-between px-4 md:px-10 py-5 z-50 transition-all duration-300 ${
+            isScrolled 
+                ? 'bg-black/90 backdrop-blur-md shadow-lg' 
+                : 'bg-transparent'
+        }`}>
             {/* Logo */}
             <h1 className="text-xl md:text-2xl font-bold text-[#FBBF24]">NihongoFlix</h1>
             
