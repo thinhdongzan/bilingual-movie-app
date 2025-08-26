@@ -16,7 +16,7 @@ function MovieSection({ title, movies }) {
 			<div className="relative">
 				<button
 					type="button"
-					className="absolute -left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white backdrop-blur hover:bg-black/60 hidden sm:inline-flex"
+					className="absolute -left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white backdrop-blur hover:bg-black/60"
 					onClick={() => scrollByAmount("left")}
 					aria-label="Scroll left"
 				>
@@ -32,7 +32,7 @@ function MovieSection({ title, movies }) {
 				</div>
 				<button
 					type="button"
-					className="absolute -right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white backdrop-blur hover:bg-black/60 hidden sm:inline-flex"
+					className="absolute -right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white backdrop-blur hover:bg-black/60"
 					onClick={() => scrollByAmount("right")}
 					aria-label="Scroll right"
 				>
