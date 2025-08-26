@@ -38,8 +38,8 @@ function Header() {
             {/* Desktop Actions */}
             <div className="hidden md:flex flex-row items-center gap-4 text-white">
                 <a href="#"><Search className="w-6 h-6 text-white hover:text-[#FBBF24] transition-all duration-300" /></a>
-                <a href="#" className="border-none px-4 py-2 font-semibold rounded-lg hover:text-[#FBBF24] transition-all duration-300">Sign up</a>
-                <a href="#" className="bg-[#FBBF24] px-4 py-2 rounded-lg text-[#111827] font-semibold hover:bg-[#FBBF24]/80 transition-all duration-300">Login</a>
+                <a href="/register" className="border-none px-4 py-2 font-semibold rounded-lg hover:text-[#FBBF24] transition-all duration-300">Sign up</a>
+                <a href="/login" className="bg-[#FBBF24] px-4 py-2 rounded-lg text-[#111827] font-semibold hover:bg-[#FBBF24]/80 transition-all duration-300">Login</a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -66,8 +66,8 @@ function Header() {
                         
                         {/* Mobile Action Buttons */}
                         <div className="flex flex-col space-y-3 pt-4">
-                            <a href="#" className="text-white hover:text-[#FBBF24] transition-all duration-300 py-2 text-center">Sign up</a>
-                            <a href="#" className="bg-[#FBBF24] py-3 rounded-lg text-[#111827] font-semibold hover:bg-[#FBBF24]/80 transition-all duration-300 text-center">Login</a>
+                            <a href="/register" className="text-white hover:text-[#FBBF24] transition-all duration-300 py-2 text-center">Sign up</a>
+                            <a href="/login" className="bg-[#FBBF24] py-3 rounded-lg text-[#111827] font-semibold hover:bg-[#FBBF24]/80 transition-all duration-300 text-center">Login</a>
                         </div>
                     </div>
                 </div>
