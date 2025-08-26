@@ -8,8 +8,14 @@ function Register() {
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
 	const [showPassword, setShowPassword] = useState(false);
+	const [acceptedTerms, setAcceptedTerms] = useState(false);
 
-	const canSubmit = username.trim().length > 0 && email.trim().length > 0 && password.trim().length > 0 && confirmPassword.trim().length > 0;
+	const canSubmit =
+		username.trim().length > 0 &&
+		email.trim().length > 0 &&
+		password.trim().length > 0 &&
+		confirmPassword.trim().length > 0 &&
+		acceptedTerms;
 
     const checkPassword = () => {
         if (password !== confirmPassword) {
@@ -140,11 +146,25 @@ function Register() {
 							</div>
 						</div>
 
-						<div className="pt-1">
-							<button type="button" className="mx-auto block text-xs text-white/70 hover:text-white" tabIndex={-1}>
-								Forgot Password
-							</button>
-						</div>
+						<div className="pt-1 flex items-center gap-3">
+                            <label htmlFor="terms" className="relative inline-flex items-center cursor-pointer select-none">
+                                <input
+                                    id="terms"
+                                    type="checkbox"
+                                    checked={acceptedTerms}
+                                    onChange={(e) => setAcceptedTerms(e.target.checked)}
+                                    className="peer sr-only"
+                                />
+                                <span className="h-5 w-5 rounded-full bg-neutral-900/50 ring-1 ring-[#FBBF24]/40 flex items-center justify-center text-transparent peer-checked:bg-[#FBBF24] peer-checked:text-white transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-3.5 w-3.5">
+                                        <path fillRule="evenodd" d="M16.704 5.29a1 1 0 0 1 0 1.42l-7.25 7.25a1 1 0 0 1-1.414 0l-3.25-3.25a1 1 0 0 1 1.414-1.42l2.543 2.543 6.543-6.543a1 1 0 0 1 1.414 0Z" clipRule="evenodd" />
+                                    </svg>
+                                </span>
+                            </label>
+                            <p className="text-xs text-white/70">
+                                I agree to our <a href="/privacy" className="font-semibold text-white hover:underline">Privacy Policy</a> and <a href="/terms" className="font-semibold text-white hover:underline">Terms & Conditions</a>
+                            </p>
+                        </div>
 
 						<button
 							type="submit"

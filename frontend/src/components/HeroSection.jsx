@@ -1,6 +1,6 @@
 import demonSlayer from '../assets/demon-slayer-backdrop.jpg';
 
-function HeroSection() {
+function HeroSection({ onStartWatching }) {
     return (
         <div className="relative h-screen w-full overflow-hidden">
             {/* Background Image */}
@@ -25,7 +25,7 @@ function HeroSection() {
                     Discover amazing Japanese movies and anime while learning the language
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                    <button className="bg-[#FBBF24] text-[#111827] px-8 py-3 rounded-lg font-semibold hover:bg-[#FBBF24]/80 transition-all duration-300">
+                    <button onClick={onStartWatching} className="bg-[#FBBF24] text-[#111827] px-8 py-3 rounded-lg font-semibold hover:bg-[#FBBF24]/80 transition-all duration-300">
                         Start Watching
                     </button>
                     <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition-all duration-300">
