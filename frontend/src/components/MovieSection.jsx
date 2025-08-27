@@ -1,7 +1,8 @@
 import { useRef } from "react";
 import MovieCard from "./MovieCard";
+import MovieCard2 from "./MovieCard2";
 
-function MovieSection({ title, movies }) {
+function MovieSection({ title, movies, type }) {
 	const scrollerRef = useRef(null);
 
 	const scrollByAmount = (dir) => {
@@ -25,8 +26,8 @@ function MovieSection({ title, movies }) {
 				</button>
 				<div ref={scrollerRef} className="flex gap-4 overflow-x-auto pb-2 [scrollbar-width:none] [-ms-overflow-style:none] snap-x snap-mandatory px-2">
 					{movies.map((movie) => (
-						<div key={movie.id} className="min-w-[180px] max-w-[180px] snap-start">
-							<MovieCard movie={movie} />
+						<div key={movie.id} className="min-w-[220px] max-w-[220px] snap-start">
+							{type === "card" ? <MovieCard movie={movie} /> : <MovieCard2 movie={movie} />}
 						</div>
 					))}
 				</div>
